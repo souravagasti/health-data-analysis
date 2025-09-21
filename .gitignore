@@ -1,0 +1,66 @@
+# ------------------------
+# Python
+# ------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ------------------------
+# Project-specific
+# ------------------------
+
+# Environment variables
+.env
+
+# Data files
+data/postgres/        # Docker Postgres persistent storage
+data/raw/             # Apple Health exports (sensitive personal data)
+data/interim/
+data/processed/
+
+# Local cache / temp
+*.log
+*.tmp
+
+# ------------------------
+# Docker
+# ------------------------
+docker/*/init.sql     # if you later add passwords here
+.docker/
+
+# ------------------------
+# IDE / Editor
+# ------------------------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+
+# Ignore Postgres internal data
+data/postgres/*
+
+#ignore WIP .MD files
+*_try.MD
+
+#ignore old files
+___old/
+
+#ignore data files
+data/*
+data/raw/export.xml
