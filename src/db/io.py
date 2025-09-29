@@ -1,8 +1,11 @@
 import pandas as pd
 from sqlalchemy.engine import Engine
+from sqlalchemy import text
+
 
 def write_table(df: pd.DataFrame, table_name: str, schema_name: str, engine: Engine):
     """Write DataFrame into Postgres (replace existing)."""
+    engine.connect()  # ensure engine is connected
     df.to_sql(
         name=table_name,
         con=engine,
@@ -11,7 +14,13 @@ def write_table(df: pd.DataFrame, table_name: str, schema_name: str, engine: Eng
         index=False
     )
 
-
 def read_table(table_name: str, schema_name: str, engine: Engine) -> pd.DataFrame:
     """Read full table into DataFrame."""
     return pd.read_sql(f"SELECT * FROM {schema_name}.{table_name}", engine)
+
+
+def execute_sql(sql: str, engine: Engine):
+    """Execute arbitrary SQL."""
+    with engine.connect() as conn:
+        conn.execute(text(sql))
+        conn.commit()

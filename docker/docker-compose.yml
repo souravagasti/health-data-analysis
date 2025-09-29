@@ -1,7 +1,7 @@
 services:
   postgres:                      # service name, becomes the hostname on Docker network
     image: postgres:15           # use official Postgres image
-    container_name: health-postgres
+    container_name: postgres
     restart: unless-stopped      # auto restart unless manually stopped
     ports:
       - "5433:5432"              # expose Postgres to host (localhost:5432)
@@ -12,7 +12,7 @@ services:
 
   metabase:
     image: metabase/metabase:latest
-    container_name: health-metabase
+    container_name: metabase
     restart: unless-stopped
     ports:
       - "3000:3000"              # Metabase UI at http://localhost:3000

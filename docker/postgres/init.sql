@@ -21,30 +21,18 @@ CREATE TABLE IF NOT EXISTS health.heart (
     "date" DATE NULL
 );
 
-CREATE TABLE IF NOT EXISTS health.heart_daily (
-    "date" DATE NULL,
-    bpm DOUBLE PRECISION NULL
-);
-
 CREATE TABLE IF NOT EXISTS health.sleep (
-    "timestamp" TIMESTAMP NULL,
+    "start_timestamp" TIMESTAMP NULL,
+    "end_timestamp" TIMESTAMP NULL,
     value TEXT NULL,
     hours DOUBLE PRECISION NULL,
     "date" DATE NULL
 );
 
-CREATE TABLE IF NOT EXISTS health.sleep_daily (
-    "date" DATE NULL,
-    hours DOUBLE PRECISION NULL
-);
 
 CREATE TABLE IF NOT EXISTS health.steps (
-    "timestamp" TIMESTAMP NULL,
+    "start_timestamp" TIMESTAMP NULL,
+     "end_timestamp" TIMESTAMP NULL,
     steps BIGINT NULL,
     "date" DATE NULL
-);
-
-CREATE TABLE IF NOT EXISTS health.steps_daily (
-    "date" DATE NULL,
-    steps BIGINT NULL
 );

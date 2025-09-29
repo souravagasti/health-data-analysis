@@ -64,3 +64,5 @@ ___old/
 #ignore data files
 data/*
 data/raw/export.xml
+
+*.todo

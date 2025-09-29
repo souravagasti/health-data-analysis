@@ -15,6 +15,6 @@ def extract_hr(root) -> tuple[pd.DataFrame, pd.DataFrame]:
     hr_df["date"] = hr_df["timestamp"].dt.date
 
     # Aggregate average heart rate per hour
-    hr_daily = hr_df.groupby("date")["bpm"].mean().reset_index()
+    # hr_daily = hr_df.groupby("date")["bpm"].mean().reset_index()
 
-    return hr_df, hr_daily
+    return hr_df
