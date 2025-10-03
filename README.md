@@ -14,6 +14,7 @@ The project uses:
 
 ## Repository Structure
 
+```bash
 health-data-analysis/
 │
 ├── apps/streamlit/ # Streamlit UI for insights
@@ -27,7 +28,7 @@ health-data-analysis/
 ├── prompts.py # Prompt templates
 ├── settings.py # Configuration loader
 └── utils.py # Shared utilities
-
+```
 
 ---
 
