@@ -1,9 +1,4 @@
-from src import get_settings
-from src.extract.apple_health import parse_xml
-from src.extract.apple_health import extract_steps
-from src.extract.apple_health import extract_sleep
-from src.extract.apple_health import extract_hr
-from src.db import get_engine, read_table, write_table
+from src import get_settings,parse_xml,extract_steps_apple,extract_sleep_apple,extract_hr_apple,get_engine, read_table, write_table
 # from src.llm import get_llm_response
 
 # (apple-health) souravagasti@Souravs-MacBook-Air health % python3 -m scripts.ingest_xml_to_db
@@ -11,11 +6,11 @@ from src.db import get_engine, read_table, write_table
 def main():
     print("Starting...")
     root = parse_xml("data/raw/export.xml")
-    steps_df = extract_steps(root)
+    steps_df = extract_steps_apple(root)
     print("Extracted steps")
-    sleep_df = extract_sleep(root)
+    sleep_df = extract_sleep_apple(root)
     print("Extracted sleep")
-    hr_df = extract_hr(root)
+    hr_df = extract_hr_apple(root)
     print("Extracted heart rate")
     # print(type(steps_df),type(sleep_df),type(hr_df))
     

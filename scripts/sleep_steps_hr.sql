@@ -1,5 +1,5 @@
 ---sleep---
-;with daily_sleep_split_by_time_and_type as (
+with daily_sleep_split_by_time_and_type as (
   select
     date,
     case

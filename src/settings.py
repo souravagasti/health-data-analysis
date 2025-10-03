@@ -36,6 +36,7 @@ class Settings(BaseSettings):
 
     # --- Other configs (future: OpenAI API keys, etc.) ---
     OPENAI_API_KEY: str | None = None
+    LLM_MODEL: str | None = None
 
 
 # Cache the settings object so it’s loaded once

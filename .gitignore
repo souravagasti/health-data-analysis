@@ -33,6 +33,12 @@ data/raw/             # Apple Health exports (sensitive personal data)
 data/interim/
 data/processed/
 
+# older files
+src/utils/
+src/llm/
+src/db/
+src/extract/
+
 # Local cache / temp
 *.log
 *.tmp
